@@ -1,73 +1,124 @@
-# React + TypeScript + Vite
+# 🥡 Magic Bento — React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido/a! 🎉 Este repo contiene una pequeña aplicación llamada *Magic Bento*: una UI interactiva creada con React, TypeScript y Vite, con animaciones hechas con GSAP para darle vida a la experiencia. 🌟
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<div align="center">
+  <img src="./public/preview.png" alt="Demo" width="90%"/>
+</div>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧰 Tecnologías / Tech Stack
 
-## Expanding the ESLint configuration
+- TypeScript
+- React
+- Vite (dev server rápido con HMR)
+- GSAP (animaciones)
+- CSS (estilos locales)
+- ESLint (calidad de código)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Dependencias principales (ver `package.json`): `react`, `react-dom`, `gsap`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Características
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Inicio rápido con Vite (dev server + hot reload)
+- Componentes en `src/components` (principal: `MagicBento`) 🧩
+- Animaciones suaves con GSAP ✨
+- Tipado con TypeScript ✅
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🧾 Requisitos
+
+- Node.js (recomendado >= 16; 18+ sugerido)
+- npm o yarn (ejemplos aquí con npm)
+
+Si tienes problemas, prueba con Node 18 o 20. 🔧
+
+## 🛠 Instalación y ejecución (local)
+
+1) Clona el repositorio y entra en la carpeta:
+
+```powershell
+git clone <url-del-repositorio>
+cd magic-bento-ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2) Instala dependencias:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm install
 ```
+
+3) Arranca el servidor de desarrollo:
+
+```powershell
+npm run dev
+```
+
+4) Abre tu navegador en la URL que muestre Vite (por defecto http://localhost:5173) 🌐
+
+Comandos útiles:
+
+- `npm run dev` — iniciar dev server
+- `npm run build` — compilar para producción (`tsc -b && vite build`)
+- `npm run preview` — previsualizar build localmente
+- `npm run lint` — ejecutar ESLint
+
+## 📁 Estructura del proyecto
+
+- public/ — activos estáticos (imágenes, etc.)
+- src/
+  - main.tsx — monta la app React
+  - App.tsx — componente raíz
+  - index.css, App.css — estilos globales
+  - components/
+    - MagicBento.tsx — componente principal 🥡
+    - MagicBento.css — estilos del componente
+  - assets/ — recursos empaquetados
+- index.html — plantilla de Vite
+- package.json — scripts y dependencias
+- tsconfig*.json — configuración TypeScript
+- vite.config.ts — configuración de Vite
+
+Explora `src/components/MagicBento.tsx` para ver las animaciones y la lógica. 👀
+
+## 📦 Despliegue
+
+La app genera una carpeta `dist` tras `npm run build`. Opciones comunes para desplegar:
+
+- Vercel: build command `npm run build`, output `dist` ✅
+- Netlify: build command `npm run build`, publish `dist` ✅
+- GitHub Pages: usar GH Actions o `gh-pages` para publicar `dist` 🪄
+- Servidor estático (NGINX, S3 + CloudFront, etc.)
+
+Ejemplo local para probar producción:
+
+```powershell
+npm run build; npm run preview
+```
+
+## 💡 Notas y recomendaciones
+
+- Revisa `tsconfig*.json` si necesitas alias o cambios de compilación.
+- Añade Prettier si quieres formato automático y reglas de estilo.
+- Optimiza imágenes y revisa importaciones para mantener bundles pequeños.
+- Si amplías el proyecto, considera tests (Jest, Vitest) y reglas de lint más estrictas.
+
+## 🤝 Cómo contribuir
+
+1. Haz fork y crea una rama descriptiva:
+
+```powershell
+git checkout -b feature/mi-nueva-caracteristica
+```
+
+2. Haz commits pequeños y claros, ejecuta linters, y abre un Pull Request explicando los cambios.
+
+Buenas prácticas:
+- Mantén los tipos de TypeScript precisos.
+- Documenta animaciones complejas en comentarios.
+
+---
+
+*Last update: May 2026*
