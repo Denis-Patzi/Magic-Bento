@@ -37,42 +37,42 @@ const cardData: BentoCardProps[] = [
         title: 'fuente de poder',
         description: ' ROG Strix 750W Gold Aura Edition',
         label: 'fuente',
-        image: './public/img9.webp'
+        image: '/img9.webp'
     },
     {
         color: '#060010',
         title: 'disco duro',
         description: 'M.2 samsung 980 pro',
         label: 'disco',
-        image: './public/img10.webp'
+        image: '/img10.webp'
     },
     {
         color: '#060010',
         title: 'Case',
         description: 'Rog strix hyperion',
         label: 'case',
-        image: './public/img4.png'
+        image: '/img4.png'
     },
     {
         color: '#060010',
         title: 'targeta grafica',
         description: 'ROG Astral GeForce RTX',
         label: 'gpu',
-        image: './public/img8.jpg'
+        image: '/img8.jpg'
     },
     {
         color: '#060010',
         title: 'procesador',
         description: 'Intel® Core™ Ultra',
         label: 'cpu',
-        image: './public/img6.1.png'
+        image: '/img6.1.png'
     },
     {
         color: '#060010',
         title: 'placa madre',
         description: 'ASUS ROG CROSSHAIR',
         label: 'Placa',
-        image: './public/img7.jpg'
+        image: '/img7.jpg'
     }
 ];
 
